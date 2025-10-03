@@ -1,4 +1,5 @@
 {
+  "$schema": "https://github.com/denoland/deno/blob/main/cli/schemas/config-file.v1.json",
   "tasks": {
     "build": "deno run --allow-env --allow-read --allow-write --allow-run esbuild.ts",
     "zip": "deno task build --minify; zip -vr dist.zip dist -x \"*.DS_Store\"",
@@ -16,5 +17,11 @@
   "compilerOptions": {
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "strict": true
+  },
+  "lock": {
+    "frozen": true
+  },
+  "publish": {
+    "include": ["dist/", "README.md", "deno.json"]
   }
 }
